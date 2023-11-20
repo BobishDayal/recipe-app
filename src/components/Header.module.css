@@ -1,0 +1,44 @@
+.header {
+  height: 4rem;
+  width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navBar {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+}
+
+.links {
+  color: white;
+  margin: 4rem;
+  font-weight: bold;
+}
+
+.button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: bolder;
+  padding: 0.5rem 1rem;
+  border-radius: 20%;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+  scale: 110%;
+}
+
+.logo {
+  width: 3.8rem;
+  height: 3.8rem;
+  margin-left: 3rem;
+}
