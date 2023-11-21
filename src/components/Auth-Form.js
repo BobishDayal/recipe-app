@@ -1,9 +1,19 @@
+import FormWrapper from "../ui/Form-Wrapper";
 import classes from "./Auth-Form.module.css";
 
+import { useState } from "react";
+
 const AuthForm = () => {
+  const [isUser, setIsUser] = useState(true);
+
+  const toogleHandler = () => {
+    setIsUser(!isUser);
+  };
+
   return (
-    <div className={classes.wrapper}>
-      <h3 className={classes.heading}>Login</h3>
+    <FormWrapper>
+      <h3 className={classes.heading}>{isUser ? "Login" : "Sign Up"}</h3>
+
       <form className={classes.form}>
         <label id="email">Email</label>
         <input type="email" />
@@ -12,12 +22,12 @@ const AuthForm = () => {
         <input type="submit" value="Submit" />
       </form>
       <p className={classes.toogle}>
-        Already have an account?{" "}
+        {!isUser ? " Already have an account?" : "Don't have an account?"}
         <span>
-          <a>Sign Up</a>
+          <a onClick={toogleHandler}>{!isUser ? " Login" : " Sign Up"}</a>
         </span>
       </p>
-    </div>
+    </FormWrapper>
   );
 };
 
