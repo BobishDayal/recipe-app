@@ -1,16 +1,37 @@
-import Header from "./components/Header";
 import AuthForm from "./components/Auth-Form";
 import AllDishes from "./components/home/AllDishes";
-import Dishes from "./ui/Dishes";
+import RootLayout from "./components/page/Root";
+import DetailedPage from "./ui/Deatailed-Page";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <AllDishes />,
+      },
+      {
+        path: `/:dishId`,
+        element: <DetailedPage />,
+      },
+    ],
+  },
+
+  {
+    path: "/mode",
+    element: <AuthForm />,
+  },
+]);
 
 function App() {
   return (
-    <div>
-      <Header />
-
-      <AllDishes />
-      {/* <AuthForm /> */}
-    </div>
+    <>
+      <RouterProvider router={Router} />
+    </>
   );
 }
 
