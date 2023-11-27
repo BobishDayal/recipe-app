@@ -1,16 +1,3 @@
-.wrapper {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  background: #000;
-  width: 40vw;
-  height: 70vh;
-  margin: auto;
-  margin-top: 5rem;
-  border-radius: 4rem;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -63,4 +50,8 @@
 }
 .form input[type="submit"]:hover {
   scale: 110%;
+}
+
+.form input {
+  color: white;
 }

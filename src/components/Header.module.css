@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .navBar {
@@ -17,6 +20,7 @@
   color: white;
   margin: 4rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .button {

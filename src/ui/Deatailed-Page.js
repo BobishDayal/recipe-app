@@ -6,17 +6,14 @@ const DetailedPage = (props) => {
 
   let { state } = useLocation();
 
-  const ingredients = Object.values(state.Ingredients);
-
-  console.log(ingredients);
-  console.log(state);
+  const ingredients = Object.values(state.ingredients);
 
   return (
     <div className={classes.page}>
-      <h3 className={classes.heading}>{state.Title}</h3>
+      <h3 className={classes.heading}>{state.name}</h3>
       <div className={classes.wrapper}>
         <div className={classes.image}>
-          <img src={`${state.Image}`} alt={` image of ${state.Title}`} />
+          <img src={`${state.image}`} alt={` image of ${state.name}`} />
         </div>
 
         <div className={classes.itemContainer}>
@@ -33,7 +30,7 @@ const DetailedPage = (props) => {
 
       <div>
         <h5 className={classes.subHeading}>Instructions</h5>
-        <p className={classes.instructions}>{state.Instructions}</p>
+        <p className={classes.instructions}>{state.instructions}</p>
       </div>
     </div>
   );

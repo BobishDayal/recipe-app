@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Dishes from "../../ui/Dishes";
 
-import { Link } from "react-router-dom";
-
 const url = "https://food-recipes-with-images.p.rapidapi.com/?q=chicken";
 const options = {
   method: "GET",
@@ -35,16 +33,14 @@ const AllDishes = () => {
     <>
       {data.map((dish) => {
         return (
-          <Link to={`/${dish.id}`} state={dish}>
-            <Dishes
-              image={dish.Image}
-              name={dish.Title}
-              key={dish.id}
-              ingredients={dish.Ingredients}
-              instructions={dish.Instructions}
-              id={dish.id}
-            />
-          </Link>
+          <Dishes
+            image={dish.Image}
+            name={dish.Title}
+            key={dish.id}
+            ingredients={dish.Ingredients}
+            instructions={dish.Instructions}
+            id={dish.id}
+          />
         );
       })}
     </>

@@ -1,9 +1,10 @@
 import classes from "./Dishes.module.css";
+import { Link } from "react-router-dom";
 
 const Dishes = (props) => {
   return (
     <>
-      <div className={classes.wrapper}>
+      <Link className={classes.wrapper} to={`/${props.id}`} state={props}>
         <div className={classes.container}>
           <img
             src={`${props.image}`}
@@ -13,8 +14,11 @@ const Dishes = (props) => {
         </div>
         <div className={classes.box}>
           <h3 className={classes.heading}>{props.name}</h3>
+          <div className={classes.paraWraaper}>
+            <p className={classes.instruction}>{props.instructions}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 };
